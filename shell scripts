@@ -1,0 +1,8 @@
+1. path in shell script
+
+sample=...
+cd $sample
+cd ${sample}_id/
+
+
+ 
