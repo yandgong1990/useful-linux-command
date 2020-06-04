@@ -1,0 +1,19 @@
+#!/bin/bash     | 说明代码解释器
+threads=$1      |
+inputfile=$2    | 参数的输入
+outputfile=$3   |
+
+USAGE="Usage : 0.1_fastqc.sh threads inputfile outputfile \n                              |
+	quality control of fastq files.\n                                                       |
+	Arguments: \n                                                                           | 脚本以及参数的解释
+		threads: the numbers of cores to use \n                                               |
+		inputfile: the filename that fastq files stored \n                                    |
+		outputfile: the directory used for storing .html files exported from fastqc \n"       |
+
+if [ -z $inputfile ]||[ -z $outputfile ];then   |
+	echo -e $USAGE                                |
+	exit 1                                        |输入的判断
+	fi                                            |
+  
+mkdir -p $outputfile/fastqc_result                                            | 代码的运行及输出
+fastqc -t $threads -o $outputfile/fastqc_result $inputfile/*fastq.gz          |
