@@ -1,0 +1,37 @@
+usage:
+
+case expression in
+    pattern1)
+        statement1
+        ;;
+    pattern2)
+        statement2
+        ;;
+    pattern3)
+        statement3
+        ;;
+    ……
+    *)
+        statementn
+esac
+
+################# examples ##################
+#!/bin/bash
+printf "Input a character: "
+read -n 1 char
+case $char in
+[a-zA-Z])
+printf "\nletter\n"
+;;
+[0-9])
+printf "\nDigit\n"
+;;
+[0-9])
+printf "\nDigit\n"
+;;
+[,.?!])
+printf "\nPunctuation\n"
+;;
+*)
+printf "\nerror\n"
+esac
